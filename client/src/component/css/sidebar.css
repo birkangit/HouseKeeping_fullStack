@@ -1,0 +1,19 @@
+.icon-style-sidebar {
+  font-size: 1.6rem;
+  padding-right: 1rem;
+  color: white;
+}
+
+.nav-link {
+  color: white;
+}
+
+.title-text-style {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.secondary-color {
+  background-color: #ff4343;
+}
