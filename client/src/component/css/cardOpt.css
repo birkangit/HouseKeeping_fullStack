@@ -1,6 +1,7 @@
 .box-padding {
+  height: 20rem;
+  width: 16rem;
   margin: 1rem 1rem 1rem 1rem;
-  padding: 0rem 1rem 1rem 1rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -10,7 +11,7 @@
 }
 
 .close-button {
-  margin: 0rem -0.5rem 0rem 0rem;
+  margin: 0.2rem 0.6rem 0rem 0rem;
 }
 
 .icon-style {
@@ -18,17 +19,32 @@
   color: gray;
 }
 
+.align-middle {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .add-card {
+  height: 20rem;
+  width: 16rem;
   margin: 1rem 1rem 1rem 1rem;
   background-color: rgb(255, 255, 255);
-  width: 8rem;
-  height: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: black;
-  border-radius: 50%;
-  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
 }
+
+/* .add-card :hover {
+  box-shadow: #ff4343 0px 0px 0px 3px;
+  transition: 1s ease-in-out;
+} */
 
 /* @media only screen and (max-width: 414px) {
   .close-button {

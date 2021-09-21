@@ -36,14 +36,14 @@ const renderCustomizedLabel = ({
 function PieInfo() {
   return (
     <div className="container">
-      <PieChart width={170} height={220}>
+      <PieChart width={150} height={200}>
         <Pie
           data={data}
           cx="50%"
           cy="50%"
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={80}
+          outerRadius={70}
           fill="#8884d8"
           dataKey="value"
         >

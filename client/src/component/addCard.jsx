@@ -3,9 +3,9 @@ import "./css/cardOpt.css";
 
 function AddCard() {
   return (
-    <div class=" text-center align-self-center ">
-      <div class="card-body add-card">
-        <h5 class="card-title">Create</h5>
+    <div className=" text-center align-self-center add-card">
+      <div className="card-body align-middle ">
+        <h5 className="card-title">Create</h5>
         <OffCanvas />
       </div>
     </div>

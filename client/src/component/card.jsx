@@ -3,8 +3,8 @@ import PieInfo from "./pie";
 
 function CardElement() {
   return (
-    <div className="card box-padding text-center align-self-center">
-      <div class="align-self-end close-button">
+    <div className="card box-padding text-center align-self-center border-hover">
+      <div className="align-self-end close-button">
         <div className="card-title">
           <i className="bi bi-x-circle icon-style" type="submit"></i>
         </div>

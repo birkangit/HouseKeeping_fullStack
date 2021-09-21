@@ -1,12 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import offcanvas from "bootstrap";
 import "./css/offcanvas.css";
+import axios from "axios";
 
-function OffCanvas() {
+const OffCanvas = () => {
+  const [state, setState] = useState({
+    Path: "",
+    Percentage: "",
+    Expiredays: "",
+  });
+
+  /**
+   {
+    "Path":"c:\\vids",
+    "Percentage":"45",
+    "Expiredays":0
+  }
+   */
+  const [result, setResult] = useState(null);
+
+  const sendData = (event) => {
+    event.preventDefault();
+    axios
+      .post("/send", { ...state })
+      .then((response) => {
+        setResult(response.data);
+        setState({ path: "", percentage: "" });
+      })
+      .catch(() => {
+        setResult({
+          success: false,
+          message: "Something went wrong. Try again later",
+        });
+      });
+  };
+
+  const onInputChange = (event) => {
+    const { name, value } = event.target;
+    setState({ ...state, [name]: value });
+  };
   return (
     <>
       <i
-        class="icon-canvas bi bi-plus-circle-fill "
+        className="icon-canvas bi bi-plus-circle-fill "
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasRight"
@@ -14,53 +50,60 @@ function OffCanvas() {
       ></i>
 
       <div
-        class="offcanvas offcanvas-end"
+        className="offcanvas offcanvas-end"
         tabindex="-1"
         id="offcanvasRight"
         aria-labelledby="offcanvasRightLabel"
       >
-        <div class="offcanvas-header">
+        <div className="offcanvas-header">
           <h5 id="offcanvasRightLabel">Add a new path</h5>
           <button
             type="button"
-            class="btn-close text-reset"
+            className="btn-close text-reset"
             data-bs-dismiss="offcanvas"
             aria-label="Close"
           ></button>
         </div>
-        <div class="offcanvas-body">
-          <label for="inputPassword5" class="form-label">
-            Enter the path:
-          </label>
-          <input
-            type="url"
-            id="inputPassword5"
-            class="form-control"
-            aria-describedby="passwordHelpBlock"
-            placeholder="c:/project/media"
-          />
-          <div id="passwordHelpBlock" class="form-text">
-            Supports paths on local storage or network
-          </div>
-          <label for="inputPassword5" class="form-label percentage-label">
-            Enter the maximum disk usage percentage:
-          </label>
-          <div class="input-group mb-3 align-self-center percentage-field">
+        <form onSubmit={sendData}>
+          <div className="offcanvas-body">
+            <label className="form-label">Enter the path:</label>
             <input
-              type="text"
-              class="form-control"
-              aria-label="Dollar amount (with dot and two decimal places)"
-              value="80"
+              name="path"
+              type="url"
+              id="inputPassword5"
+              className="form-control"
+              aria-describedby="passwordHelpBlock"
+              placeholder="c:/project/media"
+              value={state.path}
+              onChange={onInputChange}
             />
-            <span class="input-group-text ">%</span>
+            <div id="passwordHelpBlock" className="form-text">
+              Supports paths on local storage or network
+            </div>
+            <label className="form-label percentage-label">
+              Enter the maximum disk usage percentage:
+            </label>
+            <div className="input-group mb-3 align-self-center percentage-field">
+              <input
+                name="percentage"
+                type="text"
+                className="form-control"
+                aria-label="Dollar amount (with dot and two decimal places)"
+                value={state.percentage}
+                onChange={onInputChange}
+              />
+              <span className="input-group-text ">%</span>
+            </div>
+            <button
+              className="btn text-white"
+              style={{ backgroundColor: "#ff4343" }}
+            >
+              Create <i className="bi bi-plus-lg"></i>
+            </button>
           </div>
-          <button class="btn text-white" style={{ backgroundColor: "#ff4343" }}>
-            Create <i class="bi bi-plus-lg"></i>
-          </button>
-        </div>
+        </form>
       </div>
     </>
   );
-}
-
+};
 export default OffCanvas;
