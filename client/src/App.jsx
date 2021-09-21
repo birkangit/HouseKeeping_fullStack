@@ -19,23 +19,23 @@ const App = () => {
       </div>
       <div className="grid-container">
         <div className={isActive ? "sidebar_small" : "sidebar"}>
-          <Sidebar />
-          <button onClick={toggleClass} className="sidebar-button">
+          <button
+            onClick={toggleClass}
+            className={isActive ? "sidebar-button-after" : "sidebar-button"}
+          >
             <i
               className={
-                isActive
-                  ? "bi bi-caret-right-fill icon-size"
-                  : "bi bi-caret-left-fill icon-size2"
+                isActive ? "bi bi-list icon-size" : "bi bi-list icon-size2"
               }
             ></i>
           </button>
+          <Sidebar />
         </div>
         <div className={isActive ? "main-content_large" : "main-content"}>
           <div className="row g-0">
             <div className="col-xs-12 col-md-12 g-0">
               <div className="row g-0">
                 <header className="App-header">
-                  <CardElement />
                   <AddCard />
                 </header>
               </div>

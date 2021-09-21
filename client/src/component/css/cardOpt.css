@@ -1,13 +1,15 @@
 .box-padding {
   height: 20rem;
   width: 16rem;
-  margin: 1rem 1rem 1rem 1rem;
+  margin: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: black;
+  border-radius: 8px;
+  transition: 1s ease-in-out;
 }
 
 .close-button {
@@ -30,8 +32,8 @@
 .add-card {
   height: 20rem;
   width: 16rem;
-  margin: 1rem 1rem 1rem 1rem;
-  background-color: rgb(255, 255, 255);
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.493);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -39,12 +41,19 @@
   justify-content: center;
   color: black;
   border-radius: 8px;
+  transition: 0.5s ease-in-out;
 }
 
-/* .add-card :hover {
-  box-shadow: #ff4343 0px 0px 0px 3px;
+.add-card:hover {
+  box-shadow: #ff4343b9 0px 0px 0px 3px;
   transition: 1s ease-in-out;
-} */
+  background-color: rgb(255, 255, 255);
+}
+
+.border-hover:hover {
+  box-shadow: #ff4343b9 0px 0px 0px 3px;
+  transition: 1s ease-in-out;
+}
 
 /* @media only screen and (max-width: 414px) {
   .close-button {

@@ -8,6 +8,11 @@
   color: white;
 }
 
+.nav-link,
+.active {
+  color: #ff4343;
+}
+
 .title-text-style {
   white-space: nowrap;
   overflow: hidden;

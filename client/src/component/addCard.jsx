@@ -5,7 +5,7 @@ function AddCard() {
   return (
     <div className=" text-center align-self-center add-card">
       <div className="card-body align-middle ">
-        <h5 className="card-title">Create</h5>
+        <h5 className="card-title">Add a new path </h5>
         <OffCanvas />
       </div>
     </div>
